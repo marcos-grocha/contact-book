@@ -1,6 +1,7 @@
 const app = Vue.createApp({
     data() {
         return {
+            searchText: '',
             listContacts: [
                 {
                     firstName: 'Roberto',
@@ -26,31 +27,37 @@ const app = Vue.createApp({
             ]
         }
     },
+    computed: {
+        listResult() {
+            if(this.searchText) {
+                // Procurar pelo contato
+                return this.listContacts.filter(contact => {
+                    return contact.firstName.toLowerCase().includes(this.searchText.toLowerCase())
+                });
+            } else {
+                // Se não encontra, retorna todos os contatos
+                return this.listContacts;
+            }
+        }
+    },
     methods: {
+        removeContact(index) {
+            // console.log('Index do objeto selecionado: ' + index)
+
+            // Excluindo um objeto do item selecionado
+            this.listContacts.splice(index, 1)
+        },
         async getData() {
             let response = await fetch('https://randomuser.me/api/?results=15');
-            
-            // Exibindo os dados no console do navegador
-            // console.log(response.json());
-
-            // Armazenando os dados do json
-            let data = await response.json();
-            // console.log(data);
-
-            // Removendo todos os itens do array listContacts
-            this.listContacts = [];
-
+            this.listContacts = []; // Removendo todos os itens do array listContacts
+            let data = await response.json(); // Armazenando os dados do json
             data.results.forEach(item => {
-                var contact = new Object();
-                
+                var contact = new Object(); 
                 contact.picture = item.picture.large;
                 contact.firstName = item.name.first;
                 contact.lastName = item.name.last;
                 contact.email = item.email;
                 contact.city = item.location.city;
-
-                // console.log('--------')
-                // console.log(contact)
 
                 this.listContacts.push(contact);
             });
