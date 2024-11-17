@@ -1,0 +1,61 @@
+/* Estilo body */
+body {
+    background-color: #F8F9FD;
+    text-align: center;
+}
+
+/* Elementos li */
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+/* Estilo do card */
+.card {
+    background-color: #FFF;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+/* Estilo da imagem do card */
+.class-img {
+    border-radius: 50%;
+}
+
+/* Estilo para o botão excluir */
+.button-delete {
+    background-color: red;
+    color: #FFF;
+    font-size: 16px;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+/* Estilo para o botão carregar */
+.button-load {
+    background-color: #3E57DB;
+    color: #FFF;
+    font-size: 16px;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    margin-left: 10px;
+}
+
+/* Estilo do input */
+.input {
+    font-size: 16px;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+}
+
+/* Estilo do msg */
+.msg {
+    color: red;
+    margin-top: 20px;
+}

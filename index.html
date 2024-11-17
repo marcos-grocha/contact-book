@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda de Contatos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
         <h1>Agenda de Contatos</h1>
-        <input type="text" v-model="searchText" placeholder="Entre com um nome">
-        
-        <button v-on:click="getData">Carregar API com dados</button>
+        <input class="input" type="text" v-model="searchText" placeholder="Entre com um nome">
 
-        <div v-if="listResult.length <= 0">
-            Nenhum contato encontrado
+        <div class="msg" v-if="listResult.length <= 0">
+            Nenhum contato encontrado!
         </div>
 
         <ul>
             <li v-for="item, index in listResult">
-                <address>
-                    <img v-bind:src="item.picture" v-bind:alt="item.firstName"> <br>
-                    {{ item.firstName }} {{ item.lastName }} <br>
-                    Email: {{ item.email }} <br>
-                    Cidade: {{ item.city }}
-                    <button v-on:click="removeContact(index)">Excluir</button>
-                </address>
+                <div class="card">
+                    <address>
+                        <img class="class-img" v-bind:src="item.picture" v-bind:alt="item.firstName"> <br>
+                        <b>{{ item.firstName }} {{ item.lastName }}</b> <br>
+                        Email: {{ item.email }} <br>
+                        Cidade: {{ item.city }}
+                    </address><br>
+                    <button class="button-delete" v-on:click="removeContact(index)">Excluir</button>
+                </div>
             </li>
         </ul>
+        <button class="button-load" v-on:click="getData">Carregar API com dados</button>
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

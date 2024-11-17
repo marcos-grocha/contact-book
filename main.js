@@ -4,18 +4,18 @@ const app = Vue.createApp({
             searchText: '',
             listContacts: [
                 {
-                    firstName: 'Roberto',
-                    lastName: 'Soares',
-                    email: 'roberto@campuscode.com.br',
+                    firstName: 'Leticia',
+                    lastName: 'Amado',
+                    email: 'leticia.amadoaa@campuscode.com.br',
                     city: 'São Roque',
-                    picture: 'https://randomuser.me/api/portraits/men/58.jpg'
+                    picture: 'https://randomuser.me/api/portraits/women/95.jpg'
                 },
                 {
                     firstName: 'Renata',
                     lastName: 'Soares',
                     email: 'renata@campuscode.com.br',
                     city: 'São Paulo',
-                    picture: 'https://randomuser.me/api/portraits/women/24.jpg'
+                    picture: 'https://randomuser.me/api/portraits/women/12.jpg'
                 },
                 {
                     firstName: 'Marcos',
@@ -30,27 +30,22 @@ const app = Vue.createApp({
     computed: {
         listResult() {
             if(this.searchText) {
-                // Procurar pelo contato
                 return this.listContacts.filter(contact => {
                     return contact.firstName.toLowerCase().includes(this.searchText.toLowerCase())
                 });
             } else {
-                // Se não encontra, retorna todos os contatos
                 return this.listContacts;
             }
         }
     },
     methods: {
         removeContact(index) {
-            // console.log('Index do objeto selecionado: ' + index)
-
-            // Excluindo um objeto do item selecionado
             this.listContacts.splice(index, 1)
         },
         async getData() {
             let response = await fetch('https://randomuser.me/api/?results=15');
-            this.listContacts = []; // Removendo todos os itens do array listContacts
-            let data = await response.json(); // Armazenando os dados do json
+            this.listContacts = [];
+            let data = await response.json();
             data.results.forEach(item => {
                 var contact = new Object(); 
                 contact.picture = item.picture.large;
