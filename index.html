@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Contatos</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Agenda de Contatos</h1>
+        <button v-on:click="changeData">Troca Dados</button>
+
+        <address>
+            <img v-bind:src="picture" v-bind:alt="firstName"> <br>
+            {{ firstName }} {{ lastName }} <br>
+            Email: {{ email }} <br>
+            Cidade: {{ city }}
+        </address>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
