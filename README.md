@@ -1,5 +1,6 @@
-# Cook-book
+# Contact-book 📖
 
+Objetivo: dar inicio aos estudos em Vue-JS
 Nesta aplicação podemos buscar dados através de consultas em **APIs externas**.
 
 ---
@@ -22,4 +23,4 @@ Nesta aplicação podemos buscar dados através de consultas em **APIs externas*
 ## Autor
 Desenvolvido por [Marcos Guimarães Rocha](https://www.linkedin.com/in/marcos-grocha/).
 
-![cook-book](https://github.com/marcos-grocha/contact-book/blob/screenshot.png?raw=true)
+![cook-book](https://github.com/marcos-grocha/contact-book/blob/main/screenshot.png?raw=true)
