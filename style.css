@@ -1,10 +1,8 @@
-/* Estilo body */
 body {
     background-color: #F8F9FD;
     text-align: center;
 }
 
-/* Elementos li */
 li {
     list-style: none;
     display: inline-block;
@@ -58,4 +56,22 @@ li {
 .msg {
     color: red;
     margin-top: 20px;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+    background-color: rgba(0, 0, 0, 0.15);
+    width: 170px;
+    margin: auto;
+    border-radius: 15px;
+}
+footer a {
+    color: white;
+    text-decoration: none;
+}
+footer a:hover {
+    color: #2d6462;
+    text-decoration: underline;
 }
